@@ -1,32 +1,25 @@
-import java.io.BufferedInputStream;
-import java.io.InputStream;
+
 import java.util.Scanner;
 
 public class FiltreLog {
-    
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
+        int contadorError = 0;
 
-        int comptadorError = 0;
-
-        if (sc.hasNextLine()){
+        while (sc.hasNextLine()) {
             String line = sc.nextLine().trim();
 
-            if (!line.isEmpty()){
+            if (!line.isEmpty()) {
                 String[] paraules = line.split("\\s+");
 
-                for (String e : paraules){
-
-                    if (e.toUpperCase() == "ERROR"){
-                        comptadorError ++;
+                for (String e : paraules) {
+                    if (e.toUpperCase().equals("ERROR")) {
+                        contadorError++;
                     }
-
                 }
             }
         }
 
-        System.out.println(comptadorError);
-
+        System.out.println(contadorError);
     }
 }
