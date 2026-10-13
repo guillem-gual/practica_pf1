@@ -3,9 +3,11 @@ import java.io.*;
 public class AnalitzadorPrincipal {
     public static void main(String[] args) {
 
+        String javaClasspath = System.getProperty("java.class.path");
+
         // Nivell 3
-        ProcessBuilder pbError = new ProcessBuilder("java", "-cp", ".", "FiltreLog", "ERROR");
-        ProcessBuilder pbWarning = new ProcessBuilder("java", "-cp", ".", "FiltreLog", "WARNING");
+        ProcessBuilder pbError = new ProcessBuilder("java", "-cp", javaClasspath, "FiltreLog", "ERROR");
+        ProcessBuilder pbWarning = new ProcessBuilder("java", "-cp", javaClasspath, "FiltreLog", "WARNING");
 
         // Nivell 2
         File fitxerErrors = new File("errors_filtre.log");
@@ -24,9 +26,8 @@ public class AnalitzadorPrincipal {
                                "ERROR Memòria insuficient\n" +
                                "INFO Tot correcte\n" +
                                "ERROR Timeout\n" +
-                               "WARNING Espai en disc baix\n" +
+                               "ERROR Espai en disc insuficient\n" +
                                "WARNING Intents fallits\n" +
-                               "WARNING Certificat a punt de caducar\n" +
                                "WARNING Latència alta\n";
 
             // Nivell 1 i 3
