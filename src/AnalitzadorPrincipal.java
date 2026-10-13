@@ -21,9 +21,8 @@ public class AnalitzadorPrincipal {
 
             // Text de prova
             String textProva = "INFO Iniciant\n" +
-                               "ERROR Connexió fallada a la base de dades\n" +
+                               "ERROR Connexió fallada\n" +
                                "WARNING Ús de CPU al 85%\n" +
-                               "ERROR Memòria insuficient\n" +
                                "INFO Tot correcte\n" +
                                "ERROR Timeout\n" +
                                "ERROR Espai en disc insuficient\n" +
